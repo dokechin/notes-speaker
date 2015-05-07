@@ -18,13 +18,14 @@ npm install  --no-bin-links
 ./build.sh
 ```
 
-## Change the language
+## Change the voice and variant
 
-Initialize parameter with notesLang.
+Initialize parameter with voice and variant.
 
 ```
    Reveal.initialize({
-       notesLang: "es"
+       voice: "es",
+       variant : "f1"
    });
 ```
 

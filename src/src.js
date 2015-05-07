@@ -23,8 +23,14 @@ var RevealNotesTalker = (function() {
     // event.previousSlide, event.currentSlide, event.indexh, event.indexv
     var notes = event.currentSlide.querySelector(".notes");
     if(notes) {
-      if (config.notesLang){
-        mespeak.speak(notes.innerHTML,{"voice": config.notesLang});
+      if (config.voice && config.variant){
+        mespeak.speak(notes.innerHTML,{"voice": config.voice, "variant" : config.variant});
+      }
+      else if (config.voice){
+        mespeak.speak(notes.innerHTML,{"voice": config.voice});
+      }
+      else if (config.variant){
+        mespeak.speak(notes.innerHTML,{"variant": config.variant});
       }
       else{
         mespeak.speak(notes.innerHTML);
