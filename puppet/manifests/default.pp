@@ -54,6 +54,12 @@ class browserify_install {
         }
 }
 
+class uglify_install {
+        exec { 'install-uglify':
+                command => 'npm install -g uglify-js',
+                require => Package['nodejs'],
+        }
+}
 include system-update
 include system-upgrade
 include js_packages
@@ -61,3 +67,4 @@ include tools_packages
 include bower_install
 include grunt_install
 include browserify_install
+include uglify_install
